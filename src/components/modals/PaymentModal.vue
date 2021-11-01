@@ -43,7 +43,7 @@
                       <div class="input-group"><input type="text" name="expdate" placeholder="MM/YY" minlength="5" maxlength="5" required /> <label>Expiry Date</label></div>
                     </div>
                     <div class="col-6">
-                      <div class="input-group"><input type="password" placeholder="..." minlength="3" maxlength="3" required /> <label>CVV</label></div>
+                      <div class="input-group"><input type="password" placeholder="ex. 999" minlength="3" maxlength="3" required /> <label>CVV</label></div>
                     </div>
                   </div>
                 </div>

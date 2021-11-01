@@ -16,55 +16,55 @@
                 <div class="col-md-6">
                   <!-- Name--->
                   <div class="form-group">
-                    <input type="text" ref="refInput" @input="$v.form.name.$touch()" v-model.trim="form.name" :class="{ 'is-invalid': $v.form.name.$error }" class="form-control" placeholder="First Name *" />
-                    <small v-if="!$v.form.name.required && $v.form.name.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <input type="text" ref="refInput" @input="$v.name.$touch()" v-model.trim="name" :class="{ 'is-invalid': $v.name.$error }" class="form-control" placeholder="First Name *" />
+                    <small v-if="!$v.name.required && $v.name.$anyDirty" class="form-text text-danger">This field is required</small>
                   </div>
                   <!-- Surname--->
                   <div class="form-group">
-                    <input type="text" @blur="$v.form.surname.$touch()" :class="{ 'is-invalid': $v.form.surname.$error }" v-model.trim="form.surname" class="form-control" placeholder="Last Name *" value="" />
-                    <small v-if="!$v.form.surname.required && $v.form.surname.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <input type="text" @blur="$v.surname.$touch()" :class="{ 'is-invalid': $v.surname.$error }" v-model.trim="surname" class="form-control" placeholder="Last Name *" value="" />
+                    <small v-if="!$v.surname.required && $v.surname.$anyDirty" class="form-text text-danger">This field is required</small>
                   </div>
                   <!-- Age--->
                   <div class="form-group">
-                    <input type="number" @blur="$v.form.age.$touch()" :class="{ 'is-invalid': $v.form.age.$error }" v-model.trim="form.age" class="form-control" placeholder="Age" />
-                    <small v-if="!$v.form.age.required && $v.form.age.$anyDirty" class="form-text text-danger">This field is required</small>
-                    <small v-if="!$v.form.age.between && $v.form.age.$anyDirty" class="form-text text-danger">Must be a minimum of 6 age</small>
+                    <input type="number" @blur="$v.age.$touch()" :class="{ 'is-invalid': $v.age.$error }" v-model.trim="age" class="form-control" placeholder="Age" />
+                    <small v-if="!$v.age.required && $v.age.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <small v-if="!$v.age.between && $v.age.$anyDirty" class="form-text text-danger">Must be a minimum of 6 age</small>
                   </div>
                   <!-- Identity--->
                   <div class="form-group">
-                    <input type="number" @blur="$v.form.Identity.$touch()" :class="{ 'is-invalid': $v.form.Identity.$error }" v-model.trim="form.Identity" class="form-control" placeholder="12385454582" />
-                    <small v-if="!$v.form.Identity.required && $v.form.Identity.$anyDirty" class="form-text text-danger">This field is required</small>
-                    <small v-if="!$v.form.Identity.format && $v.form.Identity.$anyDirty" class="form-text text-danger"> TC No is not at expected form</small>
+                    <input type="number" @blur="$v.Identity.$touch()" :class="{ 'is-invalid': $v.Identity.$error }" v-model.trim="Identity" class="form-control" placeholder="12385454582" />
+                    <small v-if="!$v.Identity.required && $v.Identity.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <small v-if="!$v.Identity.format && $v.Identity.$anyDirty" class="form-text text-danger"> TC No is not at expected form</small>
                   </div>
                   <!-- Gender--->
                   <div class="form-group">
-                    <select @blur="$v.form.selectedGender.$touch()" :class="{ 'is-invalid': $v.form.selectedGender.$error }" v-model.trim="form.selectedGender" class="form-control">
+                    <select @blur="$v.selectedGender.$touch()" :class="{ 'is-invalid': $v.selectedGender.$error }" v-model.trim="selectedGender" class="form-control">
                       <option>Man</option>
                       <option>Woman</option>
                       form.
                     </select>
-                    <small v-if="!$v.form.selectedGender.required && $v.form.selectedGender.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <small v-if="!$v.selectedGender.required && $v.selectedGender.$anyDirty" class="form-text text-danger">This field is required</small>
                   </div>
                 </div>
                 <!-- Email--->
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="email" @blur="$v.form.email.$touch()" :class="{ 'is-invalid': $v.form.email.$error }" v-model.trim="form.email" class="form-control" placeholder="name@example.com" />
-                    <small v-if="!$v.form.email.required && $v.form.email.$anyDirty" class="form-text text-danger">This field is required</small>
-                    <small v-if="!$v.form.email.email && $v.form.email.$anyDirty" class="form-text text-danger">Please enter the valid email</small>
+                    <input type="email" @blur="$v.email.$touch()" :class="{ 'is-invalid': $v.email.$error }" v-model.trim="email" class="form-control" placeholder="name@example.com" />
+                    <small v-if="!$v.email.required && $v.email.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <small v-if="!$v.email.email && $v.email.$anyDirty" class="form-text text-danger">Please enter the valid email</small>
                   </div>
                   <!-- Phone--->
                   <div class="form-group">
-                    <input type="text" @blur="$v.form.phone.$touch()" :class="{ 'is-invalid': $v.form.phone.$error }" v-model.trim="form.phone" class="form-control" placeholder="Your Phone *" />
+                    <input type="text" @blur="$v.phone.$touch()" :class="{ 'is-invalid': $v.phone.$error }" v-model.trim="phone" class="form-control" placeholder="Your Phone *" />
                     <small class="form-text text-secondary">Exp: 5554443322</small>
-                    <small v-if="(!$v.form.phone.phone || !$v.form.phone.minLength || !$v.form.phone.maxLength) && $v.form.phone.$anyDirty" class="form-text text-danger">Phone is not at expected form</small>
+                    <small v-if="(!$v.phone.phone || !$v.phone.minLength || !$v.phone.maxLength) && $v.phone.$anyDirty" class="form-text text-danger">Phone is not at expected form</small>
                   </div>
 
                   <div class="form-group">
-                    <input type="text" @blur="$v.form.hes.$touch()" :class="{ 'is-invalid': $v.form.hes.$error }" v-model.trim="form.hes" class="form-control" placeholder="Hes Code*" value="" />
+                    <input type="text" @blur="$v.hes.$touch()" :class="{ 'is-invalid': $v.hes.$error }" v-model.trim="hes" class="form-control" placeholder="Hes Code*" value="" />
                     <small class="form-text text-secondary">Exp: AA11-1111-A1</small>
-                    <small v-if="!$v.form.hes.required && $v.form.hes.$anyDirty" class="form-text text-danger">This field is required</small>
-                    <small v-if="!$v.form.hes.format && $v.form.hes.$anyDirty" class="form-text text-danger">HES Code is not at expected form</small>
+                    <small v-if="!$v.hes.required && $v.hes.$anyDirty" class="form-text text-danger">This field is required</small>
+                    <small v-if="!$v.hes.format && $v.hes.$anyDirty" class="form-text text-danger">HES Code is not at expected form</small>
                   </div>
                   <button @click="toggleToItemEditForm()" type="submit" class="btnRegister">Submit</button>
                 </div>
